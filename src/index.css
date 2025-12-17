@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* React Big Calendar Dark Theme */
+.rbc-calendar {
+  background-color: #1e293b;
+  color: #e5e7eb;
+}
+
+.rbc-toolbar button {
+  color: #e5e7eb;
+  background: #0f172a;
+  border: 1px solid #334155;
+}
+
+.rbc-toolbar button.rbc-active {
+  background-color: #f97316;
+  color: white;
+}
+
+.rbc-month-view,
+.rbc-time-view {
+  border-color: #334155;
+}
+
+.rbc-day-bg,
+.rbc-time-slot {
+  border-color: #334155;
+}
+
+.rbc-off-range-bg {
+  background-color: #0f172a;
+}
+
+.rbc-today {
+  background-color: rgba(249, 115, 22, 0.15);
+}
