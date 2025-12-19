@@ -30,12 +30,12 @@ const events = [
 
 export default function CalendarPage() {
   return (
-    <div className="p-6">
-      <h2 className="text-white text-xl font-semibold mb-4">
+    <div className="p-6 text-black dark:text-white">
+      <h2 className="text-xl font-semibold mb-4">
         Movie Screening Calendar
       </h2>
 
-      <div className="bg-[#1e293b] p-4 rounded-xl">
+      <div className="bg-white dark:bg-[#1e293b] p-4 rounded-xl">
         <Calendar
           localizer={localizer}
           events={events}

@@ -1,7 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* React Big Calendar Dark Theme */
+
+/* Shared input style (used in MovieForm, filters, etc.) */
+.input {
+  @apply px-3 py-2 rounded-lg bg-gray-100 dark:bg-slate-800
+  text-black dark:text-gray-300 outline-none;
+}
+
+/* =========================
+   React Big Calendar Dark Theme
+   ========================= */
 .rbc-calendar {
   background-color: #1e293b;
   color: #e5e7eb;

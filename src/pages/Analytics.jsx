@@ -47,19 +47,29 @@ const COLORS = ["#f97316", "#22c55e", "#3b82f6", "#eab308"];
 
 export default function Analytics() {
   return (
-    <div className="p-6 space-y-6">
-      <h2 className="text-white text-xl font-semibold">Analytics</h2>
+    <div className="p-6 space-y-6 text-black dark:text-white">
+      <h2 className="text-xl font-semibold">Analytics</h2>
 
       {/* Revenue vs Expense */}
-      <div className="bg-[#1e293b] p-6 rounded-xl">
-        <h3 className="text-white mb-4">Revenue vs Expenses</h3>
+      <div className="bg-white dark:bg-[#1e293b] p-6 rounded-xl">
+        <h3 className="mb-4">Revenue vs Expenses</h3>
         <ResponsiveContainer width="100%" height={300}>
           <AreaChart data={revenueData}>
             <XAxis dataKey="month" stroke="#94a3b8" />
             <YAxis stroke="#94a3b8" />
             <Tooltip />
-            <Area dataKey="revenue" stroke="#f97316" fill="#f97316" fillOpacity={0.3} />
-            <Area dataKey="expense" stroke="#22c55e" fill="#22c55e" fillOpacity={0.2} />
+            <Area
+              dataKey="revenue"
+              stroke="#f97316"
+              fill="#f97316"
+              fillOpacity={0.3}
+            />
+            <Area
+              dataKey="expense"
+              stroke="#22c55e"
+              fill="#22c55e"
+              fillOpacity={0.2}
+            />
           </AreaChart>
         </ResponsiveContainer>
       </div>
@@ -67,8 +77,8 @@ export default function Analytics() {
       {/* Bottom charts */}
       <div className="grid md:grid-cols-2 gap-6">
         {/* Genre Distribution */}
-        <div className="bg-[#1e293b] p-6 rounded-xl">
-          <h3 className="text-white mb-4">Movie Genres</h3>
+        <div className="bg-white dark:bg-[#1e293b] p-6 rounded-xl">
+          <h3 className="mb-4">Movie Genres</h3>
           <ResponsiveContainer width="100%" height={250}>
             <PieChart>
               <Pie
@@ -87,8 +97,8 @@ export default function Analytics() {
         </div>
 
         {/* Screen Occupancy */}
-        <div className="bg-[#1e293b] p-6 rounded-xl">
-          <h3 className="text-white mb-4">Screen Occupancy</h3>
+        <div className="bg-white dark:bg-[#1e293b] p-6 rounded-xl">
+          <h3 className="mb-4">Screen Occupancy</h3>
           <ResponsiveContainer width="100%" height={250}>
             <BarChart data={occupancyData}>
               <XAxis dataKey="screen" stroke="#94a3b8" />
@@ -100,13 +110,17 @@ export default function Analytics() {
       </div>
 
       {/* Visitor Trend */}
-      <div className="bg-[#1e293b] p-6 rounded-xl">
-        <h3 className="text-white mb-4">Visitor Trend</h3>
+      <div className="bg-white dark:bg-[#1e293b] p-6 rounded-xl">
+        <h3 className="mb-4">Visitor Trend</h3>
         <ResponsiveContainer width="100%" height={250}>
           <LineChart data={visitorData}>
             <XAxis dataKey="time" stroke="#94a3b8" />
             <Tooltip />
-            <Line dataKey="visitors" stroke="#f97316" strokeWidth={3} />
+            <Line
+              dataKey="visitors"
+              stroke="#f97316"
+              strokeWidth={3}
+            />
           </LineChart>
         </ResponsiveContainer>
       </div>

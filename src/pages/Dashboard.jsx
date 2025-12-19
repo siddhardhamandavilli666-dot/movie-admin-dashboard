@@ -18,16 +18,38 @@ const data = [
 
 export default function Dashboard() {
   return (
-    <div className="p-6 space-y-6">
+    <div className="p-6 space-y-6 text-black dark:text-white">
+      {/* Stat Cards */}
       <div className="grid md:grid-cols-4 gap-6">
-        <StatCard title="Users" value="12,450" change="+12%" icon={<Users />} />
-        <StatCard title="Tickets" value="8,320" change="+18%" icon={<Ticket />} />
-        <StatCard title="Revenue" value="$84,200" change="+9%" icon={<DollarSign />} />
-        <StatCard title="Movies" value="24" change="Active" icon={<Film />} />
+        <StatCard
+          title="Users"
+          value="12,450"
+          change="+12%"
+          icon={<Users />}
+        />
+        <StatCard
+          title="Tickets"
+          value="8,320"
+          change="+18%"
+          icon={<Ticket />}
+        />
+        <StatCard
+          title="Revenue"
+          value="$84,200"
+          change="+9%"
+          icon={<DollarSign />}
+        />
+        <StatCard
+          title="Movies"
+          value="24"
+          change="Active"
+          icon={<Film />}
+        />
       </div>
 
-      <div className="bg-[#1e293b] p-6 rounded-xl">
-        <h3 className="text-white mb-4">Revenue Overview</h3>
+      {/* Revenue Chart */}
+      <div className="bg-white dark:bg-[#1e293b] p-6 rounded-xl">
+        <h3 className="mb-4 font-semibold">Revenue Overview</h3>
         <ResponsiveContainer width="100%" height={300}>
           <AreaChart data={data}>
             <XAxis dataKey="month" stroke="#64748b" />

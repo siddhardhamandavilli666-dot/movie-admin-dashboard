@@ -66,9 +66,9 @@ export default function BookingsTable() {
   };
 
   return (
-    <div className="p-6">
+    <div className="p-6 text-black dark:text-white">
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-white text-xl font-semibold">Bookings</h2>
+        <h2 className="text-xl font-semibold">Bookings</h2>
         <button
           onClick={addBooking}
           className="flex items-center gap-2 bg-orange-500 text-white px-4 py-2 rounded-lg"
@@ -85,7 +85,9 @@ export default function BookingsTable() {
             setFilter(e.target.value);
             setPage(1);
           }}
-          className="bg-[#1e293b] text-gray-300 px-3 py-2 rounded-lg"
+          className="bg-gray-100 dark:bg-[#1e293b]
+          text-black dark:text-gray-300
+          px-3 py-2 rounded-lg outline-none"
         >
           <option>All</option>
           <option>Confirmed</option>
@@ -95,9 +97,10 @@ export default function BookingsTable() {
       </div>
 
       {/* Table */}
-      <div className="overflow-x-auto bg-[#1e293b] rounded-xl">
+      <div className="overflow-x-auto bg-white dark:bg-[#1e293b] rounded-xl">
         <table className="w-full text-left">
-          <thead className="border-b border-slate-700 text-gray-400">
+          <thead className="border-b border-gray-200 dark:border-slate-700
+            text-gray-500 dark:text-gray-400">
             <tr>
               <th className="p-4">Customer</th>
               <th className="p-4">Movie</th>
@@ -111,7 +114,8 @@ export default function BookingsTable() {
             {visibleRows.map((b) => (
               <tr
                 key={b.id}
-                className="border-b border-slate-700 text-gray-300"
+                className="border-b border-gray-200 dark:border-slate-700
+                text-gray-700 dark:text-gray-300"
               >
                 <td className="p-4">{b.customer}</td>
                 <td className="p-4">{b.movie}</td>
@@ -121,19 +125,22 @@ export default function BookingsTable() {
                   <span
                     className={`px-3 py-1 rounded-full text-sm ${
                       b.status === "Confirmed"
-                        ? "bg-green-500/20 text-green-400"
+                        ? "bg-green-500/20 text-green-500"
                         : b.status === "Pending"
-                        ? "bg-yellow-500/20 text-yellow-400"
-                        : "bg-red-500/20 text-red-400"
+                        ? "bg-yellow-500/20 text-yellow-500"
+                        : "bg-red-500/20 text-red-500"
                     }`}
                   >
                     {b.status}
                   </span>
                 </td>
                 <td className="p-4 flex gap-3">
-                  <Edit className="cursor-pointer text-blue-400" size={18} />
+                  <Edit
+                    className="cursor-pointer text-blue-500"
+                    size={18}
+                  />
                   <Trash2
-                    className="cursor-pointer text-red-400"
+                    className="cursor-pointer text-red-500"
                     size={18}
                     onClick={() => deleteBooking(b.id)}
                   />
@@ -149,17 +156,23 @@ export default function BookingsTable() {
         <button
           disabled={page === 1}
           onClick={() => setPage(page - 1)}
-          className="px-3 py-1 bg-slate-800 text-gray-300 rounded disabled:opacity-50"
+          className="px-3 py-1
+          bg-gray-200 dark:bg-slate-800
+          text-gray-700 dark:text-gray-300
+          rounded disabled:opacity-50"
         >
           Prev
         </button>
-        <span className="text-gray-400 px-2">
+        <span className="px-2 text-gray-500 dark:text-gray-400">
           {page} / {totalPages}
         </span>
         <button
           disabled={page === totalPages}
           onClick={() => setPage(page + 1)}
-          className="px-3 py-1 bg-slate-800 text-gray-300 rounded disabled:opacity-50"
+          className="px-3 py-1
+          bg-gray-200 dark:bg-slate-800
+          text-gray-700 dark:text-gray-300
+          rounded disabled:opacity-50"
         >
           Next
         </button>

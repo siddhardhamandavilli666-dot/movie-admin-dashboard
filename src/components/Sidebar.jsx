@@ -5,6 +5,7 @@ import {
   Kanban,
   BarChart3,
   Ticket,
+  Film, // ✅ ADDED
 } from "lucide-react";
 
 export default function Sidebar() {
@@ -30,15 +31,24 @@ export default function Sidebar() {
         <NavLink to="/" className={linkClass}>
           <LayoutDashboard size={18} /> Dashboard
         </NavLink>
+
+        {/* ✅ ADDED: Movies link */}
+        <NavLink to="/movies" className={linkClass}>
+          <Film size={18} /> Movies
+        </NavLink>
+
         <NavLink to="/calendar" className={linkClass}>
           <Calendar size={18} /> Calendar
         </NavLink>
+
         <NavLink to="/kanban" className={linkClass}>
           <Kanban size={18} /> Kanban
         </NavLink>
+
         <NavLink to="/analytics" className={linkClass}>
           <BarChart3 size={18} /> Analytics
         </NavLink>
+
         <NavLink to="/bookings" className={linkClass}>
           <Ticket size={18} /> Bookings
         </NavLink>

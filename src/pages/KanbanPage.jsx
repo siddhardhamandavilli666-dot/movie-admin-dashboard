@@ -73,8 +73,8 @@ export default function KanbanPage() {
   };
 
   return (
-    <div className="p-6">
-      <h2 className="text-white text-xl font-semibold mb-6">
+    <div className="p-6 text-black dark:text-white">
+      <h2 className="text-xl font-semibold mb-6">
         Kanban Board
       </h2>
 
@@ -83,9 +83,9 @@ export default function KanbanPage() {
           {Object.entries(columns).map(([colId, col]) => (
             <div
               key={colId}
-              className="bg-[#1e293b] rounded-xl p-4"
+              className="bg-white dark:bg-[#1e293b] rounded-xl p-4"
             >
-              <h3 className="text-white font-semibold mb-4">
+              <h3 className="font-semibold mb-4">
                 {col.title}
               </h3>
 
@@ -107,7 +107,12 @@ export default function KanbanPage() {
                             ref={provided.innerRef}
                             {...provided.draggableProps}
                             {...provided.dragHandleProps}
-                            className="bg-[#0f172a] p-3 rounded-lg text-gray-300 border border-slate-700"
+                            className="
+                              bg-gray-100 dark:bg-[#0f172a]
+                              p-3 rounded-lg
+                              text-gray-700 dark:text-gray-300
+                              border border-gray-200 dark:border-slate-700
+                            "
                           >
                             {item.title}
                           </div>
